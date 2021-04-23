@@ -14,11 +14,11 @@ function addMessage(message){
 }
 
 function getMessages(){
-    $.get("http://localhost:3000/messages",(data) => {
+    $.get("https://agile-beyond-98031.herokuapp.com/messages",(data) => {
         data.forEach(msg => addMessage(msg));
     });
 }
 
 function postMessage(message){
-    $.post("http://localhost:3000/messages", message);
+    $.post("https://agile-beyond-98031.herokuapp.com/messages", message);
 }
