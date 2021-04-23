@@ -15,6 +15,7 @@ function addMessage(message){
 
 function getMessages(){
     $.get("https://agile-beyond-98031.herokuapp.com/messages",(data) => {
+        console.log(data);
         data.forEach(msg => addMessage(msg));
     });
 }
