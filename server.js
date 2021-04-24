@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 // For getting the server
 var app = express();
-var http = require('http').Server(app);
+var http = require('https').Server(app);
 // Getting mongoose ready
 var mongoose = require('mongoose');
 // With this below, we have now the http server bounded with the express framework and with sockets.
