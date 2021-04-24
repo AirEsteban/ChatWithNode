@@ -13,7 +13,7 @@ var mongoose = require('mongoose');
 // With this below, we have now the http server bounded with the express framework and with sockets.
 var io = require('socket.io')(http);
 
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 3000;
 
 // Connection string, must be on a configuration file
 const uri = "mongodb+srv://esteban:esteban@cluster0.viwoe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
@@ -56,7 +56,7 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true }, (err)
 });
 
 // We used to write app.listen, but we now have the http bounded to the express app.
-var server = http.listen(port, hostname, () => {
+var server = http.listen(port, () => {
     console.log("Server is listening on port %d", port);
 });
 
