@@ -4,6 +4,10 @@ var path = require('path');
 // For getting the server
 var app = express();
 var http = require('http').Server(app);
+var os = require("os");
+
+
+var hostname = os.hostname();
 // Getting mongoose ready
 var mongoose = require('mongoose');
 // With this below, we have now the http server bounded with the express framework and with sockets.
@@ -24,9 +28,7 @@ app.use(express.static(__dirname));
 app.use(express.urlencoded({extended: true}));
 
 app.get("/messages", (req,res) => {
-    console.log("Getting the messages ready");
     Message.find({},(err, messages) => {
-        console.log(messages.map((msg) => {console.log(msg)}));
         res.send(messages);
     });
 });
@@ -54,7 +56,7 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true }, (err)
 });
 
 // We used to write app.listen, but we now have the http bounded to the express app.
-var server = http.listen(port, () => {
+var server = http.listen(port, hostname, () => {
     console.log("Server is listening on port %d", port);
 });
 
