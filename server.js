@@ -16,7 +16,7 @@ var io = require('socket.io')(http);
 var port = process.env.PORT || 3000;
 
 // Connection string, must be on a configuration file
-const uri = "mongodb+srv://esteban:esteban@cluster0.viwoe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const uri = "mongodb+srv://yourAccount:yourPassword@cluster0.viwoe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 // We need the schema to let mongoose create the map.
 var Message = mongoose.model("message", {
