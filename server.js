@@ -25,7 +25,7 @@ var Message = mongoose.model("message", {
 });
 
 app.use(express.static(__dirname));
-app.use(express.urlencoded({extended: true}));
+//app.use(express.urlencoded({extended: true}));
 
 app.get("/messages", (req,res) => {
     Message.find({},(err, messages) => {
@@ -51,7 +51,7 @@ io.on("connection",(socket) => {
 });
 
 // Connect to mongodb via mlab and mongoose ORM.
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
+mongoose.connect(uri, {/* useNewUrlParser: true, useUnifiedTopology: true */}, (err) => {
    console.log("Connection to the database established."); 
 });
 
